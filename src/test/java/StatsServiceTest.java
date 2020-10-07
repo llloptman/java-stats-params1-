@@ -24,4 +24,14 @@ class StatsServiceTest {
 
        assertEquals(expectedResult,actual);
     }
+
+    @Test
+    void highestSaleMonth() {
+        StatsService service = new StatsService();
+        int[] data = new int[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expectedResult = 8;
+        int actual = service.highestSaleMonth(data);
+
+        assertEquals(expectedResult,actual);
+    }
 }
