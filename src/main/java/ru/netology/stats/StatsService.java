@@ -12,15 +12,12 @@ public class StatsService {
     }
 
     public int avrSalesPerMonth(int[] data) {
-        int salesSumm = 0;
-        for (int datum : data) {
-            salesSumm += datum;
-        }
+        int salesSumm = salesAmount(data);
         return salesSumm / data.length;
     }
 
     public int highestSaleMonth(int[] data) {
-        int salesMaximum = 0;
+        int salesMaximum = data[0];
         int month = 0;
         for (int i = 0; i < data.length; i++) {
             if (data[i] >= salesMaximum) {
@@ -32,17 +29,8 @@ public class StatsService {
     }
 
     public int lowestSaleMonth(int[] data) {
-        int salesMaximum = 0;
+        int salesMinimum = data[0];
         int month = 0;
-
-        for (int datum : data) {
-            if (datum >= salesMaximum) {
-                salesMaximum = datum;
-            }
-        }
-
-        int salesMinimum = salesMaximum;
-
         for (int i = 0; i < data.length; i++) {
             if (data[i] <= salesMinimum) {
                 salesMinimum = data[i];
@@ -53,10 +41,10 @@ public class StatsService {
     }
 
     public int countMonthsOverAvr(int[] data) {
-        avrSalesPerMonth(data);
+       int avr = avrSalesPerMonth(data);
         int countMonths = 0;
         for (int datum : data) {
-            if (datum > avrSalesPerMonth(data)) {
+            if (datum > avr) {
                 countMonths += 1;
             }
         }
