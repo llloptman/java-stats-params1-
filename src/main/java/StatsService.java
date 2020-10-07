@@ -62,5 +62,16 @@ public class StatsService {
         return countMonths;
     }
 
+    public int countMonthsUnderAvr(int[] data) {
+        int avr = avrSalesPerMonth(data);
+        int countMonths = 0;
+        for (int datum : data) {
+            if (datum < avr) {
+                countMonths += 1;
+            }
+        }
+
+        return countMonths;
+    }
 
 }

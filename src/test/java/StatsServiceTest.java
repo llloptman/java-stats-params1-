@@ -54,4 +54,14 @@ class StatsServiceTest {
 
         assertEquals(expectedResult,actual);
     }
+
+    @Test
+    void countMonthsUnderAvr() {
+        StatsService service = new StatsService();
+        int[] data = new int[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expectedResult = 5;
+        int actual = service.countMonthsUnderAvr(data);
+
+        assertEquals(expectedResult,actual);
+    }
 }
