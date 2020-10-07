@@ -34,4 +34,14 @@ class StatsServiceTest {
 
         assertEquals(expectedResult,actual);
     }
+
+    @Test
+    void lowestSaleMonth() {
+        StatsService service = new StatsService();
+        int[] data = new int[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expectedResult = 9;
+        int actual = service.lowestSaleMonth(data);
+
+        assertEquals(expectedResult,actual);
+    }
 }
