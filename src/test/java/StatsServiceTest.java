@@ -15,4 +15,13 @@ class StatsServiceTest {
     }
 
 
+    @Test
+    void avrSalesPerMonth() {
+        StatsService service = new StatsService();
+        int[] data = new int[] {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expectedResult = 15;
+        int actual = service.avrSalesPerMonth(data);
+
+       assertEquals(expectedResult,actual);
+    }
 }
